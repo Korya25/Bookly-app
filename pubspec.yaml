@@ -31,9 +31,32 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # Provides Cupertino-style icons for Flutter apps.
   cupertino_icons: ^1.0.8
+
+  # A package to add shimmering effect (loading placeholders) to your app.
+  shimmer: ^3.0.0
+
+  # A carousel slider for Flutter to create beautiful image sliders.
+  carousel_slider: ^5.0.0
+
+  # A package to add "Read More" and "Show Less" functionality for long text.
+  readmore: ^3.0.0
+
+  # A customizable rating bar to display and interact with ratings.
+  flutter_rating_bar: ^4.0.1
+
+  # A routing package for declarative navigation in Flutter apps.
+  go_router: ^14.8.1
+
+  # A package for responsive UI design, adapting to different screen sizes.
+  flutter_screenutil: ^5.9.3
+
+  # A package to easily use Google Fonts in your Flutter app.
+  google_fonts: ^6.2.1
+
+  # A package to load and cache network images efficiently.
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
