@@ -7,26 +7,31 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BooksSliderCard extends StatelessWidget {
-  const BooksSliderCard({super.key, required this.activeIndex});
-  final int activeIndex;
+  const BooksSliderCard({
+    super.key,
+    required this.currentIndex,
+    required this.sectionHeight,
+  });
+
+  final int currentIndex;
+  final double sectionHeight;
 
   @override
   Widget build(BuildContext context) {
-    final imageHeight = AppDimens.size350.h;
     return Stack(
       children: [
         // Gradient Masked Image
         GradientMaskedImage(
-          imageHeight: imageHeight,
-          imageWidth: ScreenUtil().screenWidth,
+          imageHeight: sectionHeight,
+          imageWidth: MediaQuery.of(context).size.width,
           imageUrl:
               'https://c4.wallpaperflare.com/wallpaper/844/472/902/soccer-zamalek-sc-emblem-logo-hd-wallpaper-preview.jpg',
         ),
 
-        // content
+        // Content
         BooksSliderCardContent(
-          height: imageHeight - AppDimens.size20,
-          activeIndex: activeIndex,
+          height: sectionHeight - AppDimens.size20,
+          currentIndex: currentIndex,
         ),
       ],
     );
@@ -37,10 +42,12 @@ class BooksSliderCardContent extends StatelessWidget {
   const BooksSliderCardContent({
     super.key,
     required this.height,
-    required this.activeIndex,
+    required this.currentIndex,
   });
+
   final double height;
-  final int activeIndex;
+  final int currentIndex;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -52,7 +59,7 @@ class BooksSliderCardContent extends StatelessWidget {
       child: SizedBox(
         height: height.h,
         child: Column(
-          spacing: 2.h,
+          spacing: 2.5.h,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -76,7 +83,7 @@ class BooksSliderCardContent extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(
                 AppConstants.carouselSliderItemsCount,
-                (indexDot) => DotIndicator(isActive: indexDot == activeIndex),
+                (indexDot) => DotIndicator(isActive: indexDot == currentIndex),
               ),
             ),
           ],

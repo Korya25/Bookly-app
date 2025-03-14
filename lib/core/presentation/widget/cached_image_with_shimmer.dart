@@ -27,8 +27,6 @@ class CachedImageWithShimmer extends StatelessWidget {
       height: imageHeight.h,
       width: imageWidth.w,
       fit: BoxFit.cover,
-      memCacheHeight: (imageHeight.h * 2).toInt(),
-      memCacheWidth: (imageWidth.w * 2).toInt(),
       imageUrl: imageUrl,
       placeholder: (context, url) => _buildShimmerLoading(),
       errorWidget: (context, url, error) => _buildErrorIcon(),

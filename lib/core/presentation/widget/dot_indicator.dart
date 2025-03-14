@@ -17,8 +17,8 @@ class DotIndicator extends StatelessWidget {
         borderRadius: BorderRadius.circular(6),
         color:
             isActive
-                ? AppColors.dotindicator_active
-                : AppColors.dotindicator_disactive,
+                ? AppColors.dotIndicatorActive
+                : AppColors.dotIndicatorDisactive,
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:book_app/features/books/presentation/widget/books_slider_card.dart';
+import 'package:book_app/features/books/presentation/widget/books_slider_section.dart';
 import 'package:flutter/material.dart';
 
 class BooksView extends StatelessWidget {
@@ -19,7 +19,7 @@ class BooksViewWidget extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         // Slider Section
-        SliverToBoxAdapter(child: BooksSliderCard(activeIndex: 2)),
+        SliverToBoxAdapter(child: BooksSliderSection()),
         // Popular Books Section
 
         // Newest Books Section
