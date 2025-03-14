@@ -11,29 +11,34 @@ class BooksSliderCard extends StatelessWidget {
     super.key,
     required this.currentIndex,
     required this.sectionHeight,
+    required this.onTap,
   });
 
   final int currentIndex;
   final double sectionHeight;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Gradient Masked Image
-        GradientMaskedImage(
-          imageHeight: sectionHeight,
-          imageWidth: MediaQuery.of(context).size.width,
-          imageUrl:
-              'https://c4.wallpaperflare.com/wallpaper/844/472/902/soccer-zamalek-sc-emblem-logo-hd-wallpaper-preview.jpg',
-        ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Stack(
+        children: [
+          // Gradient Masked Image
+          GradientMaskedImage(
+            imageHeight: sectionHeight,
+            imageWidth: double.infinity,
+            imageUrl:
+                'https://c4.wallpaperflare.com/wallpaper/844/472/902/soccer-zamalek-sc-emblem-logo-hd-wallpaper-preview.jpg',
+          ),
 
-        // Content
-        BooksSliderCardContent(
-          height: sectionHeight - AppDimens.size20,
-          currentIndex: currentIndex,
-        ),
-      ],
+          // Content
+          BooksSliderCardContent(
+            height: sectionHeight - AppDimens.size20,
+            currentIndex: currentIndex,
+          ),
+        ],
+      ),
     );
   }
 }
