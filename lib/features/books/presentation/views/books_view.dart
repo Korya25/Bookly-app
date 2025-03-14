@@ -7,10 +7,9 @@ class BooksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Books', style: AppTextStyles.font32WhiteW800),
+      body: Center(
+        child: Text('Books View', style: AppTextStyles.font16WhiteW400),
       ),
-      body: Column(children: [const Center(child: Text('Books View'))]),
     );
   }
 }

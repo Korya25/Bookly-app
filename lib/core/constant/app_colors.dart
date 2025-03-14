@@ -6,6 +6,9 @@ class AppColors {
   static const Color accentColor = Color(0xFFFFC107);
   static const Color scaffoldBackgroundColor = Color(0xff100B20);
 
+  // Bottom Navigation Bar Colors
+  static const Color bottomNavBarColor = Color.fromARGB(67, 158, 158, 158);
+
   // Text Colors
   static const Color textPrimary = Colors.white;
   static const Color textSecondary = Colors.grey;
@@ -13,6 +16,10 @@ class AppColors {
   // Button Colors
   static const Color buttonPrimary = Color(0xFF6200EE);
   static const Color buttonSecondary = Color(0xFF03DAC6);
+
+  // icon Colors
+  static const Color iconPrimary = Colors.white;
+  static const Color iconSecondary = Colors.grey;
 
   // Other Colors
   static const Color errorColor = Color(0xFFB00020);

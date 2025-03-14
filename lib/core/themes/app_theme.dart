@@ -8,6 +8,8 @@ ThemeData getApplicationTheme() {
 
     // App bar theme
     appBarTheme: appBarTheme(),
+
+    iconTheme: IconThemeData(size: 26),
   );
 }
 
