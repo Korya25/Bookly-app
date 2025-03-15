@@ -26,7 +26,7 @@ class BooksSliderSection extends StatelessWidget {
           },
         );
       },
-      height: sliderSectionHeight,
+      height: AppDimens.size300,
     );
   }
 }

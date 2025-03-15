@@ -38,8 +38,8 @@ class CachedImageWithShimmer extends StatelessWidget {
       baseColor: Colors.grey[850]!,
       highlightColor: Colors.grey[800]!,
       child: Container(
-        width: imageWidth.w,
-        height: imageHeight.h,
+        width: imageWidth,
+        height: imageHeight,
         decoration: BoxDecoration(
           color: AppColors.accentColor,
           borderRadius: BorderRadius.circular(borderRadius),

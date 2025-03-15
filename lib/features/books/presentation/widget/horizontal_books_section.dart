@@ -23,7 +23,7 @@ class HorizontalBooksSection extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppDimens.padding10.w),
       child: SizedBox(
-        height: AppDimens.size250.h,
+        height: AppDimens.size280.h,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

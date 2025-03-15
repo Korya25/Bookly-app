@@ -16,9 +16,9 @@ class BooksListSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppDimens.size200.h,
+      height: AppDimens.size250.h,
       child: CustomListViewSeparated(
-        height: AppDimens.size200.h,
+        height: AppDimens.size250.h,
         itemCount: itemCount,
         itemBuilder: itemBuilder,
       ),

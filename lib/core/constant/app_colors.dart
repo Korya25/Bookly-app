@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class AppColors {
   // Main Colors
   static const Color primaryColor = Color(0xff100B20);
-  static const Color accentColor = Color(0xFFFFC107);
   static const Color scaffoldBackgroundColor = Color(0xff100B20);
   static const Color appBarIconTHeme = Colors.white;
+  static const Color accentColor = Color(0xFFFFC107);
 
+  // Rating Icon Color
+  static const Color ratingIconColor = Color(0xFFFFC107);
   // Bottom Navigation Bar Colors
   static const Color bottomNavBarColor = Color.fromARGB(67, 158, 158, 158);
 
