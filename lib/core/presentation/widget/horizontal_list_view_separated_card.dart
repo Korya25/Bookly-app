@@ -1,18 +1,20 @@
 import 'package:book_app/core/constant/app_colors.dart';
 import 'package:book_app/core/constant/app_dimens.dart';
+import 'package:book_app/core/constant/app_text_styles.dart';
 import 'package:book_app/core/presentation/widget/cached_image_with_shimmer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HorizontalBooksCardSection extends StatelessWidget {
+class HorizontalListViewSeparatedCard extends StatelessWidget {
   final Function() onTap;
-  const HorizontalBooksCardSection({super.key, required this.onTap});
+  const HorizontalListViewSeparatedCard({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: AppDimens.size120,
       child: Column(
-        spacing: 5,
+        spacing: AppDimens.size5.h,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
@@ -34,11 +36,7 @@ class HorizontalBooksCardSection extends StatelessWidget {
                 'Real Madrid CF:',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w900,
-                  color: AppColors.textPrimary,
-                ),
+                style: AppTextStyles.font14WhiteW900,
               ),
 
               // Rating Widget
@@ -49,14 +47,7 @@ class HorizontalBooksCardSection extends StatelessWidget {
                     color: AppColors.ratingIconColor,
                     size: AppDimens.size18,
                   ),
-                  Text(
-                    '7.8/10',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.textSecondary,
-                    ),
-                  ),
+                  Text('7.8/10', style: AppTextStyles.font12greyW600),
                 ],
               ),
             ],

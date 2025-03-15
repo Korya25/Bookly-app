@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomListViewSeparated extends StatelessWidget {
-  const CustomListViewSeparated({
+class HorizontalListViewSeparated extends StatelessWidget {
+  const HorizontalListViewSeparated({
     super.key,
     required this.height,
     required this.itemCount,

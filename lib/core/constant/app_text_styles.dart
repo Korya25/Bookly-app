@@ -33,4 +33,16 @@ class AppTextStyles {
     color: Colors.white,
     fontWeight: FontWeight.w700,
   );
+
+  static const TextStyle font14WhiteW900 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w900,
+    color: AppColors.textPrimary,
+  );
+
+  static const TextStyle font12greyW600 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+    color: AppColors.textSecondary,
+  );
 }

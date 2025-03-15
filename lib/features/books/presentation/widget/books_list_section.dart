@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:book_app/core/constant/app_dimens.dart';
-import 'package:book_app/core/presentation/widget/custom_list_view_separated.dart';
+import 'package:book_app/core/presentation/widget/horizontal_list_view_separated.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BooksListSection extends StatelessWidget {
@@ -17,7 +17,7 @@ class BooksListSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: AppDimens.size250.h,
-      child: CustomListViewSeparated(
+      child: HorizontalListViewSeparated(
         height: AppDimens.size250.h,
         itemCount: itemCount,
         itemBuilder: itemBuilder,

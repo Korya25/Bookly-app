@@ -1,6 +1,10 @@
 import 'package:book_app/core/constant/app_strings.dart';
 import 'package:book_app/core/constant/app_text_styles.dart';
+import 'package:book_app/core/presentation/widget/vertical_list_view_separated_card.dart';
+import 'package:book_app/core/presentation/widget/vertical_list_view_separted.dart';
+import 'package:book_app/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NewestBooksView extends StatelessWidget {
   const NewestBooksView({super.key});
@@ -29,18 +33,13 @@ class NewestBooksViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const BouncingScrollPhysics(),
-      shrinkWrap: true,
+    return VerticalListViewSeparted(
       itemCount: 10,
-      itemBuilder: (context, index) {
-        return Card(
-          child: Text('Popular Books'),
-          elevation: 10,
-          margin: const EdgeInsets.all(10),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
+      itemBuilder: (BuildContext context, int index) {
+        return VerticalListViewSepartedCard(
+          onTap: () {
+            context.pushNamed(AppRoutes.bookDetailsRoute);
+          },
         );
       },
     );
