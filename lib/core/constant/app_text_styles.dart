@@ -22,4 +22,15 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: Colors.grey,
   );
+  static const TextStyle font12greyW500 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: Colors.grey,
+  );
+
+  static const TextStyle font20WhiteW700 = TextStyle(
+    fontSize: 20,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
 }

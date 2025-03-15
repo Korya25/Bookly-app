@@ -1,4 +1,6 @@
 import 'package:book_app/features/books/presentation/widget/books_slider_section.dart';
+import 'package:book_app/features/books/presentation/widget/newest_horizontal_books_section.dart';
+import 'package:book_app/features/books/presentation/widget/popular_horizontal_books_section.dart';
 import 'package:flutter/material.dart';
 
 class BooksView extends StatelessWidget {
@@ -20,9 +22,12 @@ class BooksViewWidget extends StatelessWidget {
       slivers: [
         // Slider Section
         SliverToBoxAdapter(child: BooksSliderSection()),
-        // Popular Books Section
 
-        // Newest Books Section
+        // Popular Horizontal Books Section
+        SliverToBoxAdapter(child: PopularHorizontalBooksSection()),
+
+        // Newest Horizontal Books Section
+        SliverToBoxAdapter(child: NewestHorizontalBooksSection()),
       ],
     );
   }

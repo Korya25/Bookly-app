@@ -2,12 +2,13 @@ class AppStrings {
   // App Name
   static const String appName = "Bookly";
 
-  // Home Screen
-  static const String homeTitle = "Home";
-  static const String searchHint = "Search for books...";
+  // Books Screen
+  static const String homeTitle = "Books";
+  static const String popularBooks = "Popular Books";
+  static const String newestBooks = "Newest Books";
 
   // Buttons
-  static const String buttonSeeAll = "See All";
+  static const String buttonSeeAll = "see all";
   static const String buttonAddToCart = "Add to Cart";
 
   // Errors

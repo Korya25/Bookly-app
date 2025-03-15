@@ -14,5 +14,8 @@ ThemeData getApplicationTheme() {
 }
 
 AppBarTheme appBarTheme() {
-  return AppBarTheme(backgroundColor: AppColors.scaffoldBackgroundColor);
+  return AppBarTheme(
+    backgroundColor: AppColors.scaffoldBackgroundColor,
+    iconTheme: IconThemeData(color: AppColors.appBarIconTHeme),
+  );
 }

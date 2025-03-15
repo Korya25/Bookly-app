@@ -5,6 +5,7 @@ class AppColors {
   static const Color primaryColor = Color(0xff100B20);
   static const Color accentColor = Color(0xFFFFC107);
   static const Color scaffoldBackgroundColor = Color(0xff100B20);
+  static const Color appBarIconTHeme = Colors.white;
 
   // Bottom Navigation Bar Colors
   static const Color bottomNavBarColor = Color.fromARGB(67, 158, 158, 158);
@@ -20,6 +21,7 @@ class AppColors {
   // Icon Colors
   static const Color iconPrimary = Colors.white;
   static const Color iconSecondary = Colors.grey;
+  static const Color seeAllIcon = Colors.grey;
 
   // Dot Indicator Colors
   static const Color dotIndicatorActive = Color(0xFFB00020);
