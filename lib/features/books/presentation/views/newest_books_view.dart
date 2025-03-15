@@ -10,6 +10,10 @@ class NewestBooksView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        leading: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back_ios_new_rounded),
+        ),
         title: Text(
           AppStrings.newestBooks,
           style: AppTextStyles.font20WhiteW700,
