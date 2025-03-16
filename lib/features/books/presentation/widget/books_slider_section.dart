@@ -1,5 +1,4 @@
 import 'package:book_app/core/constant/app_constant.dart';
-import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:book_app/core/presentation/widget/custom_carousel_slider.dart';
 import 'package:book_app/core/router/app_routes.dart';
 import 'package:book_app/features/books/presentation/widget/books_slider_card.dart';
@@ -11,7 +10,7 @@ class BooksSliderSection extends StatelessWidget {
   const BooksSliderSection({super.key});
 
   ///  Slider Section Height
-  double get sliderSectionHeight => AppDimens.size350.h;
+  double get sliderSectionHeight => AppConstants.sliderCardHeight.h;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +19,12 @@ class BooksSliderSection extends StatelessWidget {
       itemBuilder: (context, index, realIndex) {
         return BooksSliderCard(
           currentIndex: index,
-          sectionHeight: sliderSectionHeight,
           onTap: () {
             context.goNamed(AppRoutes.bookDetailsRoute);
           },
         );
       },
-      height: AppDimens.size300,
+      height: sliderSectionHeight,
     );
   }
 }

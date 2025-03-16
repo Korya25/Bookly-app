@@ -10,12 +10,10 @@ class BooksSliderCard extends StatelessWidget {
   const BooksSliderCard({
     super.key,
     required this.currentIndex,
-    required this.sectionHeight,
     required this.onTap,
   });
 
   final int currentIndex;
-  final double sectionHeight;
   final Function()? onTap;
 
   @override
@@ -26,15 +24,13 @@ class BooksSliderCard extends StatelessWidget {
         children: [
           // Gradient Masked Image
           GradientMaskedImage(
-            imageHeight: sectionHeight,
-            imageWidth: double.infinity,
             imageUrl:
                 'https://c4.wallpaperflare.com/wallpaper/844/472/902/soccer-zamalek-sc-emblem-logo-hd-wallpaper-preview.jpg',
           ),
 
           // Content
           BooksSliderCardContent(
-            height: sectionHeight - AppDimens.size20,
+            height: AppConstants.sliderCardHeight - AppDimens.size20,
             currentIndex: currentIndex,
           ),
         ],

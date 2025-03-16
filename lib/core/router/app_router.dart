@@ -57,7 +57,18 @@ class AppRouter {
             name: AppRoutes.bookMarkRoute,
             pageBuilder:
                 (context, state) => NoTransitionPage(
-                  child: Scaffold(body: Center(child: Text('Book Mark'))),
+                  child: Scaffold(
+                    body: Center(
+                      child: Text(
+                        'Book Mark',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
           ),
           GoRoute(
@@ -65,7 +76,18 @@ class AppRouter {
             name: AppRoutes.musicLibraryRoute,
             pageBuilder:
                 (context, state) => NoTransitionPage(
-                  child: Scaffold(body: Center(child: Text('Music Library'))),
+                  child: Scaffold(
+                    body: Center(
+                      child: Text(
+                        'Music Library',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
           ),
           GoRoute(
@@ -73,7 +95,18 @@ class AppRouter {
             name: AppRoutes.profileRoute,
             pageBuilder:
                 (context, state) => NoTransitionPage(
-                  child: Scaffold(body: Center(child: Text('Profile'))),
+                  child: Scaffold(
+                    body: Center(
+                      child: Text(
+                        'Profile',
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
           ),
         ],

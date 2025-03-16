@@ -7,10 +7,15 @@ class AppColors {
   static const Color appBarIconTHeme = Colors.white;
   static const Color accentColor = Color(0xFFFFC107);
 
+  static const Color previewContinerColor = Colors.red;
   // Rating Icon Color
   static const Color ratingIconColor = Color(0xFFFFC107);
   // Bottom Navigation Bar Colors
   static const Color bottomNavBarColor = Color.fromARGB(67, 158, 158, 158);
+  static const Color bottomNavBarIconColorFoucs = Colors.red;
+  static const Color bottomNavBarIconColorUnFoucs = Colors.grey;
+
+  static const circleDotColor = Color(0x33ffffff);
 
   // Text Colors
   static const Color textPrimary = Colors.white;
@@ -21,6 +26,8 @@ class AppColors {
   static const Color buttonSecondary = Color(0xFF03DAC6);
 
   // Icon Colors
+  static const iconContainerColor = Color(0xB2272830);
+
   static const Color iconPrimary = Colors.white;
   static const Color iconSecondary = Colors.grey;
   static const Color seeAllIcon = Colors.grey;

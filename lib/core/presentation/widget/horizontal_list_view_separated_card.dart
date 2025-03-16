@@ -33,7 +33,7 @@ class HorizontalListViewSeparatedCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Real Madrid CF:',
+                'Real Madrid CF: The Story of the Greatest Team in the World',
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: AppTextStyles.font14WhiteW900,

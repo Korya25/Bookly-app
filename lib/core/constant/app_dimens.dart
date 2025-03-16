@@ -1,5 +1,6 @@
 class AppDimens {
   // Padding and Margins
+  static const double padding4 = 4.0;
   static const double padding6 = 6.0;
   static const double padding8 = 8.0;
   static const double padding10 = 10.0;
@@ -10,6 +11,9 @@ class AppDimens {
 
   // Border Radius
   static const double borderRadius0 = 0.0;
+
+  static const double borderRadius10 = 10.0;
+  static const double borderRadius12 = 12.0;
   static const double borderRadius50 = 50.0;
 
   //  Sizes

@@ -1,7 +1,7 @@
+import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:book_app/features/books/presentation/widget/books_list_section.dart';
 import 'package:book_app/features/books/presentation/widget/books_list_header.dart';
 import 'package:flutter/material.dart';
-import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HorizontalBooksSection extends StatelessWidget {

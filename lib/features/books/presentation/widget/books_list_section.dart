@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:book_app/core/constant/app_dimens.dart';
+import 'package:flutter/material.dart';
 import 'package:book_app/core/presentation/widget/horizontal_list_view_separated.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

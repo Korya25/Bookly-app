@@ -1,6 +1,6 @@
 import 'package:book_app/core/constant/app_strings.dart';
-import 'package:book_app/core/constant/app_text_styles.dart';
-import 'package:book_app/core/presentation/widget/vertical_list_view_separated_card.dart';
+import 'package:book_app/core/presentation/widget/app_bar_with_title_and_back_button.dart';
+import 'package:book_app/core/presentation/widget/sliver_list_books_card.dart';
 import 'package:book_app/core/presentation/widget/vertical_list_view_separted.dart';
 import 'package:book_app/core/router/app_routes.dart';
 import 'package:flutter/material.dart';
@@ -11,37 +11,34 @@ class PopularBooksView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
-        ),
-        centerTitle: true,
-        title: Text(
-          AppStrings.popularBooks,
-          style: AppTextStyles.font20WhiteW700,
-        ),
-      ),
-      body: const PopularBooksWidget(),
-    );
+    return Scaffold(body: const NewestBooksViewWidget());
   }
 }
 
-class PopularBooksWidget extends StatelessWidget {
-  const PopularBooksWidget({super.key});
+class NewestBooksViewWidget extends StatelessWidget {
+  const NewestBooksViewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return VerticalListViewSeparted(
-      itemCount: 10,
-      itemBuilder: (BuildContext context, int index) {
-        return VerticalListViewSepartedCard(
-          onTap: () {
-            context.pushNamed(AppRoutes.bookDetailsRoute);
-          },
-        );
-      },
+    return Column(
+      children: [
+        AppBarWithTitleAndBackButton(
+          title: AppStrings.popularBooks,
+          onBackPressed: () => Navigator.pop(context),
+        ),
+        Expanded(
+          child: VerticalListViewSeparted(
+            itemCount: 10,
+            itemBuilder: (BuildContext context, int index) {
+              return VerticalListViewSepartedCard(
+                onTap: () {
+                  context.pushNamed(AppRoutes.bookDetailsRoute);
+                },
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

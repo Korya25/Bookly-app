@@ -44,7 +44,10 @@ class BottomNavIcons {
       onTap: onTap,
       child: Icon(
         iconData,
-        color: isFocused ? AppColors.iconPrimary : AppColors.iconSecondary,
+        color:
+            isFocused
+                ? AppColors.bottomNavBarIconColorFoucs
+                : AppColors.bottomNavBarIconColorUnFoucs,
       ),
     );
   }
