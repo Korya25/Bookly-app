@@ -21,24 +21,24 @@ class MainScreen extends StatelessWidget {
   Widget _buildBottomNavBar(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(
-        bottom: screenSize.height * AppDimens.bottomNavBarPaddingFactor,
-      ),
+      padding: EdgeInsets.only(bottom: AppDimens.bottomNavBarPaddingFactor),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius50),
+          borderRadius: BorderRadius.circular(AppDimens.extraLargeRadius),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
             child: Container(
-              height: screenSize.height * AppDimens.bottomNavBarHeight,
+              height: screenSize.height * AppDimens.bottomNavBarHeightFactor,
               width: screenSize.width * AppDimens.bottomNavBarWidthFactor,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppDimens.borderRadius50),
-                color: AppColors.bottomNavBarColor,
+                borderRadius: BorderRadius.circular(AppDimens.extraLargeRadius),
+                color: AppColors.bottomNavBarBackground,
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: AppDimens.padding18),
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppDimens.extraLargeSpacing,
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: BottomNavIcons.buildBottomNavIcons(context),

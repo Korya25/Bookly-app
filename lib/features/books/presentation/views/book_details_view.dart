@@ -6,6 +6,7 @@ class BookDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Displays detailed information about a selected book
     return Scaffold(body: BookDetailsCard());
   }
 }

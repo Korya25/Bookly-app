@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData getApplicationTheme() {
   return ThemeData(
     // Main colors
-    scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
+    scaffoldBackgroundColor: AppColors.scaffoldBackground,
 
     // App bar theme
     appBarTheme: appBarTheme(),
@@ -15,7 +15,7 @@ ThemeData getApplicationTheme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    backgroundColor: AppColors.scaffoldBackgroundColor,
-    iconTheme: IconThemeData(color: AppColors.appBarIconTHeme),
+    backgroundColor: AppColors.scaffoldBackground,
+    iconTheme: IconThemeData(color: AppColors.appBarIcon),
   );
 }

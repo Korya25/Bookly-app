@@ -1,9 +1,8 @@
 import 'package:book_app/core/presentation/screen/main_screen.dart';
 import 'package:book_app/core/router/app_routes.dart';
 import 'package:book_app/features/books/presentation/views/book_details_view.dart';
+import 'package:book_app/features/books/presentation/views/books_list_view.dart';
 import 'package:book_app/features/books/presentation/views/books_view.dart';
-import 'package:book_app/features/books/presentation/views/newest_books_view.dart';
-import 'package:book_app/features/books/presentation/views/popular_books_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -40,15 +39,17 @@ class AppRouter {
                 path: popularBooksPath,
                 name: AppRoutes.popularBooksRoute,
                 pageBuilder:
-                    (context, state) =>
-                        CupertinoPage(child: const PopularBooksView()),
+                    (context, state) => CupertinoPage(
+                      child: const BooksListView(type: BooksListType.popular),
+                    ),
               ),
               GoRoute(
                 path: newestBooksPath,
                 name: AppRoutes.newestBooksRoute,
                 pageBuilder:
-                    (context, state) =>
-                        CupertinoPage(child: const NewestBooksView()),
+                    (context, state) => CupertinoPage(
+                      child: const BooksListView(type: BooksListType.newest),
+                    ),
               ),
             ],
           ),

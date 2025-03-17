@@ -2,7 +2,6 @@ import 'package:book_app/core/constant/app_colors.dart';
 import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CachedImageWithShimmer extends StatelessWidget {
@@ -11,29 +10,30 @@ class CachedImageWithShimmer extends StatelessWidget {
     required this.imageHeight,
     required this.imageWidth,
     required this.imageUrl,
-    this.borderRadius = AppDimens.borderRadius0,
+    this.borderRadius,
     this.boxShadow,
   });
 
   final double imageHeight;
   final double imageWidth;
   final String imageUrl;
-  final double borderRadius;
+  final double? borderRadius;
   final List<BoxShadow>? boxShadow;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      height: imageHeight.h,
-      width: imageWidth.w,
+      height: imageHeight,
+      width: imageWidth,
       fit: BoxFit.cover,
       imageUrl: imageUrl,
-      placeholder: (context, url) => _buildShimmerLoading(),
-      errorWidget: (context, url, error) => _buildErrorIcon(),
+      placeholder: (context, url) => _buildShimmerPlaceholder(),
+      errorWidget: (context, url, error) => _buildErrorWidget(),
     );
   }
 
-  Widget _buildShimmerLoading() {
+  // Builds a shimmer effect while the image is loading
+  Widget _buildShimmerPlaceholder() {
     return Shimmer.fromColors(
       baseColor: Colors.grey[850]!,
       highlightColor: Colors.grey[800]!,
@@ -41,15 +41,16 @@ class CachedImageWithShimmer extends StatelessWidget {
         width: imageWidth,
         height: imageHeight,
         decoration: BoxDecoration(
-          color: AppColors.accentColor,
-          borderRadius: BorderRadius.circular(borderRadius),
+          color: AppColors.accent,
+          borderRadius: BorderRadius.circular(borderRadius ?? 0),
           boxShadow: boxShadow,
         ),
       ),
     );
   }
 
-  Widget _buildErrorIcon() {
-    return Icon(Icons.error, color: AppColors.errorColor, size: 24.h);
+  // Displays an error icon if the image fails to load
+  Widget _buildErrorWidget() {
+    return Icon(Icons.error, color: AppColors.error, size: AppDimens.size24);
   }
 }

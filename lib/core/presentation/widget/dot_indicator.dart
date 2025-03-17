@@ -10,15 +10,15 @@ class DotIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: AppDimens.padding10),
-      width: isActive ? AppDimens.size30 : AppDimens.size6,
-      height: AppDimens.size6,
+      margin: const EdgeInsets.only(right: AppDimens.largeSpacing),
+      width: isActive ? AppDimens.size30 : AppDimens.size5,
+      height: AppDimens.size5,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(6),
         color:
             isActive
                 ? AppColors.dotIndicatorActive
-                : AppColors.dotIndicatorDisactive,
+                : AppColors.dotIndicatorInactive,
       ),
     );
   }

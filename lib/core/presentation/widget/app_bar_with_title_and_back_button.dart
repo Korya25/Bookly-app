@@ -18,19 +18,21 @@ class AppBarWithTitleAndBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: AppDimens.padding12,
-        horizontal: AppDimens.padding16,
+      padding: EdgeInsets.symmetric(
+        vertical: AppDimens.mediumSpacing,
+        horizontal: AppDimens.largeSpacing,
       ),
       child: Row(
         children: [
-          // Back Button
           CircularIconButton(onPressed: onBackPressed, icon: icon),
-
-          // Title
-          const Spacer(flex: 1),
-          Text(title, style: AppTextStyles.font20WhiteW700),
-          const Spacer(flex: 1),
+          SizedBox(width: AppDimens.mediumSpacing),
+          Expanded(
+            child: Text(
+              title,
+              style: AppTextStyles.headingLarge,
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );

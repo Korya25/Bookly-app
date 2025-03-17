@@ -1,7 +1,6 @@
 import 'package:book_app/core/constant/app_dimens.dart';
-import 'package:flutter/material.dart';
 import 'package:book_app/core/presentation/widget/horizontal_list_view_separated.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
 
 class BooksListSection extends StatelessWidget {
   const BooksListSection({
@@ -15,13 +14,11 @@ class BooksListSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: AppDimens.size250.h,
-      child: HorizontalListViewSeparated(
-        height: AppDimens.size250.h,
-        itemCount: itemCount,
-        itemBuilder: itemBuilder,
-      ),
+    final screenSize = MediaQuery.of(context).size;
+    return HorizontalListViewSeparated(
+      height: screenSize.height * AppDimens.horizontalListHeightFactor,
+      itemCount: itemCount,
+      itemBuilder: itemBuilder,
     );
   }
 }

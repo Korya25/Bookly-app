@@ -4,7 +4,6 @@ import 'package:book_app/core/constant/app_text_styles.dart';
 import 'package:book_app/core/presentation/widget/dot_indicator.dart';
 import 'package:book_app/core/presentation/widget/gradient_masked_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BooksSliderCard extends StatelessWidget {
   const BooksSliderCard({
@@ -14,7 +13,7 @@ class BooksSliderCard extends StatelessWidget {
   });
 
   final int currentIndex;
-  final Function()? onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -22,69 +21,56 @@ class BooksSliderCard extends StatelessWidget {
       onTap: onTap,
       child: Stack(
         children: [
-          // Gradient Masked Image
           GradientMaskedImage(
             imageUrl:
-                'https://c4.wallpaperflare.com/wallpaper/844/472/902/soccer-zamalek-sc-emblem-logo-hd-wallpaper-preview.jpg',
+                'https://aboutmsr.com/wp-content/uploads/2024/06/441-1.jpg',
           ),
-
-          // Content
-          BooksSliderCardContent(
-            height: AppConstants.sliderCardHeight - AppDimens.size20,
-            currentIndex: currentIndex,
-          ),
+          BooksSliderCardOverlay(currentIndex: currentIndex),
         ],
       ),
     );
   }
 }
 
-class BooksSliderCardContent extends StatelessWidget {
-  const BooksSliderCardContent({
-    super.key,
-    required this.height,
-    required this.currentIndex,
-  });
+class BooksSliderCardOverlay extends StatelessWidget {
+  const BooksSliderCardOverlay({super.key, required this.currentIndex});
 
-  final double height;
   final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+
     return Padding(
-      padding: const EdgeInsets.only(
-        right: AppDimens.padding16,
-        left: AppDimens.padding16,
-        bottom: AppDimens.padding10,
+      padding: EdgeInsets.only(
+        right: AppDimens.xxxLargeSpacing,
+        left: AppDimens.xxxLargeSpacing,
+        bottom: AppDimens.largeSpacing,
       ),
       child: SizedBox(
-        height: height.h,
+        height: screenSize.height * AppDimens.sliderCardHeightFactor,
         child: Column(
-          spacing: 2.5.h,
-          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Title
             Text(
-              'Zamalek FC',
+              'Zamalek FC', // يمكن جعلها ديناميكية لاحقًا
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.font18WhiteW800,
+              style: AppTextStyles.headingMedium,
             ),
-            // Author
             Text(
-              'Shikabala',
+              'Shikabala', // يمكن جعلها ديناميكية لاحقًا
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.font14greyW500,
+              style: AppTextStyles.bodyMedium,
             ),
-
-            // Dot Indicator Section
+            SizedBox(height: AppDimens.size10),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: List.generate(
                 AppConstants.carouselSliderItemsCount,
-                (indexDot) => DotIndicator(isActive: indexDot == currentIndex),
+                (index) => DotIndicator(isActive: index == currentIndex),
               ),
             ),
           ],

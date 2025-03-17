@@ -1,3 +1,4 @@
+import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -6,23 +7,26 @@ class CustomCarouselSlider extends StatelessWidget {
     super.key,
     required this.itemCount,
     required this.itemBuilder,
-    required this.height,
+    this.options,
   });
 
-  final double height;
   final int itemCount;
   final Widget Function(BuildContext, int, int) itemBuilder;
+  final CarouselOptions? options;
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = MediaQuery.of(context).size.height;
     return CarouselSlider.builder(
       itemCount: itemCount,
       itemBuilder: itemBuilder,
-      options: CarouselOptions(
-        height: height,
-        viewportFraction: 1,
-        autoPlay: true,
-      ),
+      options:
+          options ??
+          CarouselOptions(
+            height: screenHeight * AppDimens.carouselHeightFactor,
+            viewportFraction: 1,
+            autoPlay: true,
+          ),
     );
   }
 }

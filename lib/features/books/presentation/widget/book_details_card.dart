@@ -11,20 +11,25 @@ class BookDetailsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Book cover image with gradient mask
+        // Background image with gradient mask
         GradientMaskedImage(
-          imageUrl:
-              'https://imageio.forbes.com/i-forbesimg/media/lists/teams/real-madrid_416x416.jpg?format=jpg',
+          imageUrl: 'https://aboutmsr.com/wp-content/uploads/2024/06/441-1.jpg',
         ),
 
-        // Book details content
-        const BookDetailsContent(),
+        // Book details content (title, year, etc.)
+        BookDetailsContent(
+          title: 'Zamalek',
+          year: '1911',
+          genre: 'Sports',
+          rating: '5',
+          ratingCount: '357',
+        ),
 
-        // Back and bookmark buttons
+        // Navigation and bookmark controls
         Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: AppDimens.padding12,
-            horizontal: AppDimens.padding16,
+          padding: EdgeInsets.symmetric(
+            vertical: AppDimens.mediumSpacing,
+            horizontal: AppDimens.largeSpacing,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,7 +38,10 @@ class BookDetailsCard extends StatelessWidget {
                 onPressed: () => Navigator.pop(context),
                 icon: Icons.arrow_back_ios_new,
               ),
-              CircularIconButton(onPressed: () {}, icon: Icons.bookmark),
+              CircularIconButton(
+                onPressed: () {}, // يمكن إضافة منطق لاحقًا
+                icon: Icons.bookmark,
+              ),
             ],
           ),
         ),

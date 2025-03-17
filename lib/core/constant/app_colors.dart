@@ -1,42 +1,43 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  // Main Colors
-  static const Color primaryColor = Color(0xff100B20);
-  static const Color scaffoldBackgroundColor = Color(0xff100B20);
-  static const Color appBarIconTHeme = Colors.white;
-  static const Color accentColor = Color(0xFFFFC107);
+  // Core UI Colors
+  static const Color primary = Color(0xFF100B20);
+  static const Color scaffoldBackground = Color(0xFF100B20);
+  static const Color accent = Color(0xFFFFC107);
 
-  static const Color previewContinerColor = Colors.red;
-  // Rating Icon Color
-  static const Color ratingIconColor = Color(0xFFFFC107);
-  // Bottom Navigation Bar Colors
-  static const Color bottomNavBarColor = Color.fromARGB(67, 158, 158, 158);
-  static const Color bottomNavBarIconColorFoucs = Colors.red;
-  static const Color bottomNavBarIconColorUnFoucs = Colors.grey;
-
-  static const circleDotColor = Color(0x33ffffff);
+  // Navigation Colors
+  static const Color appBarIcon = Colors.white;
+  static const Color bottomNavBarBackground = Color.fromARGB(67, 158, 158, 158);
+  static const Color bottomNavBarIconFocused = Colors.red;
+  static const Color bottomNavBarIconUnfocused = Colors.grey;
 
   // Text Colors
   static const Color textPrimary = Colors.white;
-  static const Color textSecondary = Colors.grey;
+  static const Color textSecondary =
+      Colors.grey; // Used for secondary text, icons, etc.
 
   // Button Colors
   static const Color buttonPrimary = Color(0xFF6200EE);
   static const Color buttonSecondary = Color(0xFF03DAC6);
 
   // Icon Colors
-  static const iconContainerColor = Color(0xB2272830);
-
   static const Color iconPrimary = Colors.white;
-  static const Color iconSecondary = Colors.grey;
-  static const Color seeAllIcon = Colors.grey;
+  static const Color iconSecondary = textSecondary; // Reused from textSecondary
+  static const Color iconContainer = Color(0xB2272830);
+  static const Color seeAllIcon = textSecondary; // Reused from textSecondary
+  static const Color ratingIcon = Color(0xFFFFC107);
+  static const Color previewContainer = Colors.red;
 
-  // Dot Indicator Colors
+  // Indicator Colors
+  static const Color circleDot = Color(0x33FFFFFF);
   static const Color dotIndicatorActive = Color(0xFFB00020);
-  static const Color dotIndicatorDisactive = Color(0x26ffffff);
+  static const Color dotIndicatorInactive = Color(0x26FFFFFF);
 
   // Status Colors
-  static const Color errorColor = Color(0xFFB00020);
-  static const Color successColor = Color(0xFF4CAF50);
+  static const Color error = Color(0xFFB00020);
+  static const Color success = Color(0xFF4CAF50);
+
+  // Card Colors
+  static const Color cardBackground = Color.fromARGB(255, 20, 14, 41);
 }

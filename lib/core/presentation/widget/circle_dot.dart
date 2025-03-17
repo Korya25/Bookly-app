@@ -8,14 +8,14 @@ class CircleDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppDimens.padding6),
+      padding: const EdgeInsets.symmetric(horizontal: AppDimens.smallSpacing),
       child: Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: AppColors.circleDotColor,
+          color: AppColors.circleDot,
         ),
-        width: AppDimens.size6,
-        height: AppDimens.size6,
+        width: AppDimens.size5,
+        height: AppDimens.size5,
       ),
     );
   }

@@ -7,9 +7,9 @@ class CircularIconButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.icon,
-    this.iconSize = AppDimens.size20,
+    this.iconSize = AppDimens.mediumIcon,
     this.iconColor = AppColors.iconPrimary,
-    this.containerColor = AppColors.iconContainerColor,
+    this.containerColor = AppColors.iconContainer,
   });
 
   final IconData icon;
@@ -20,10 +20,11 @@ class CircularIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // A reusable circular button with an icon
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.all(AppDimens.padding8),
+        padding: EdgeInsets.all(AppDimens.smallSpacing),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: containerColor,

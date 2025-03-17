@@ -57,8 +57,8 @@ class BottomNavIcons {
         iconData,
         color:
             isFocused
-                ? AppColors.bottomNavBarIconColorFoucs
-                : AppColors.bottomNavBarIconColorUnFoucs,
+                ? AppColors.bottomNavBarIconFocused
+                : AppColors.bottomNavBarIconUnfocused,
       ),
     );
   }
