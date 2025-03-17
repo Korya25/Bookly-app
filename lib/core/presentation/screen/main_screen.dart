@@ -20,18 +20,18 @@ class MainScreen extends StatelessWidget {
 
   Widget _buildBlurredBottomNavBar(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: AppDimens.padding24.h),
+      padding: EdgeInsets.only(bottom: AppDimens.padding24),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRRect(
-          borderRadius: BorderRadius.circular(AppDimens.borderRadius50.r),
+          borderRadius: BorderRadius.circular(AppDimens.borderRadius50),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
             child: Container(
-              height: AppDimens.size50.h,
-              width: AppDimens.size250.w,
+              height: AppDimens.size50,
+              width: AppDimens.size250,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppDimens.borderRadius50.r),
+                borderRadius: BorderRadius.circular(AppDimens.borderRadius50),
                 color: AppColors.bottomNavBarColor,
               ),
               child: Padding(

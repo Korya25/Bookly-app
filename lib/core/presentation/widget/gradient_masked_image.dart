@@ -1,4 +1,3 @@
-import 'package:book_app/core/constant/app_constant.dart';
 import 'package:book_app/core/presentation/widget/cached_image_with_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class GradientMaskedImage extends StatelessWidget {
   const GradientMaskedImage({
     super.key,
-    this.imageHeight = AppConstants.sliderCardHeight,
+    this.imageHeight = 300,
     required this.imageUrl,
   });
 
