@@ -3,7 +3,6 @@ import 'package:book_app/core/constant/app_colors.dart';
 import 'package:book_app/core/constant/app_dimens.dart';
 import 'package:book_app/core/presentation/widget/bottom_nav_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key, required this.child});
@@ -13,14 +12,18 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Stack(children: [child, _buildBlurredBottomNavBar(context)]),
+        child: Stack(children: [child, _buildBottomNavBar(context)]),
       ),
     );
   }
 
-  Widget _buildBlurredBottomNavBar(BuildContext context) {
+  // Builds a blurred bottom navigation bar with icons
+  Widget _buildBottomNavBar(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(bottom: AppDimens.padding24),
+      padding: EdgeInsets.only(
+        bottom: screenSize.height * AppDimens.bottomNavBarPaddingFactor,
+      ),
       child: Align(
         alignment: Alignment.bottomCenter,
         child: ClipRRect(
@@ -28,19 +31,17 @@ class MainScreen extends StatelessWidget {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
             child: Container(
-              height: AppDimens.size50,
-              width: AppDimens.size250,
+              height: screenSize.height * AppDimens.bottomNavBarHeight,
+              width: screenSize.width * AppDimens.bottomNavBarWidthFactor,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(AppDimens.borderRadius50),
                 color: AppColors.bottomNavBarColor,
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: AppDimens.padding16.w,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: AppDimens.padding18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: BottomNavIcons.getIcons(context),
+                  children: BottomNavIcons.buildBottomNavIcons(context),
                 ),
               ),
             ),

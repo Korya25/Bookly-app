@@ -7,14 +7,19 @@ class AppDimens {
   static const double padding12 = 12.0;
   static const double padding14 = 14.0;
   static const double padding16 = 16.0;
+  static const double padding18 = 18.0;
   static const double padding24 = 24.0;
 
   // Border Radius
   static const double borderRadius0 = 0.0;
-
   static const double borderRadius10 = 10.0;
   static const double borderRadius12 = 12.0;
   static const double borderRadius50 = 50.0;
+
+  // Bottom Nav Bar
+  static const double bottomNavBarHeight = 0.06;
+  static const double bottomNavBarWidthFactor = 0.7;
+  static const double bottomNavBarPaddingFactor = 0.05;
 
   //  Sizes
   static const double size5 = 5.0;
