@@ -3,6 +3,7 @@ class AppRoutes {
   static const String bookDetailsRoute = '/book_details';
   static const String popularBooksRoute = '/popular_books';
   static const String newestBooksRoute = '/newest_books';
+  static const String similarBooksRoute = '/similar_books';
   static const String bookMarkRoute = '/book_mark';
   static const String musicLibraryRoute = '/music_library';
   static const String profileRoute = '/profile';

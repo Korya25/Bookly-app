@@ -1,7 +1,9 @@
-import 'package:book_app/core/constant/app_dimens.dart';
+import 'package:book_app/core/constant/app_strings.dart';
+import 'package:book_app/core/router/app_routes.dart';
 import 'package:book_app/features/books/presentation/widget/books_horizontal_section.dart';
 import 'package:book_app/features/books/presentation/widget/featured_books_carousel.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BooksView extends StatelessWidget {
   const BooksView({super.key});
@@ -14,14 +16,15 @@ class BooksView extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(child: FeaturedBooksCarousel()),
         SliverToBoxAdapter(
-          child: BooksHorizontalSection(type: BooksSectionType.popular),
+          child: BooksHorizontalSection(
+            title: AppStrings.popularBooks,
+            onTap: () => context.goNamed(AppRoutes.popularBooksRoute),
+          ),
         ),
         SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.only(
-              bottom: AppDimens.bottomNavBarHeightFactor + 60,
-            ),
-            child: BooksHorizontalSection(type: BooksSectionType.newest),
+          child: BooksHorizontalSection(
+            title: AppStrings.newestBooks,
+            onTap: () => context.goNamed(AppRoutes.newestBooksRoute),
           ),
         ),
       ],
