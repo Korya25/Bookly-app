@@ -1,3 +1,6 @@
+import 'package:book_app/core/api_services/api_services.dart';
+import 'package:book_app/core/constant/app_constant.dart';
+import 'package:book_app/features/books/data/models/book_model/book_model.dart';
 import 'package:book_app/features/books/domain/entities/book_entity.dart';
 
 abstract class HomeRemoteDataSource {
@@ -8,27 +11,40 @@ abstract class HomeRemoteDataSource {
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
+  final ApiServices apiServices;
+
+  HomeRemoteDataSourceImpl(this.apiServices);
   @override
-  Future<List<BookEntity>> getFeaturedBooks() {
-    // TODO: implement getFeaturedBooks
-    throw UnimplementedError();
+  Future<List<BookEntity>> getFeaturedBooks() async {
+    var data = await apiServices.get(
+      endPoint:
+          'volumes?q=flutter&filter=paid-ebooks&maxResults=${AppConstants.carouselSliderItemsCount}',
+    );
+
+    List<BookEntity> books = getBooksList(data);
+    return books;
+  }
+
+  List<BookEntity> getBooksList(Map<String, dynamic> data) {
+    List<BookEntity> books = [];
+    for (var bookMap in data['items']) {
+      books.add(BookModel.fromJson(bookMap));
+    }
+    return books;
   }
 
   @override
   Future<List<BookEntity>> getNewestBooks() {
-    // TODO: implement getNewestBooks
-    throw UnimplementedError();
+    apiServices.get(endPoint: endPoint);
   }
 
   @override
   Future<List<BookEntity>> getPopularBooks() {
-    // TODO: implement getPopularBooks
-    throw UnimplementedError();
+    apiServices.get(endPoint: endPoint);
   }
 
   @override
   Future<List<BookEntity>> getSimilarBooks() {
-    // TODO: implement getSimilarBooks
-    throw UnimplementedError();
+    apiServices.get(endPoint: endPoint);
   }
 }
