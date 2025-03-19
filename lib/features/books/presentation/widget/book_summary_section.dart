@@ -22,7 +22,7 @@ class BookSummarySection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(AppStrings.story, style: AppTextStyles.headingMedium),
+          Text(AppStrings.description, style: AppTextStyles.headingMedium),
           SizedBox(height: AppDimens.mediumSpacing),
           ReadMoreText(
             summary,

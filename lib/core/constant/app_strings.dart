@@ -9,7 +9,7 @@ class AppStrings {
   static const String similarBooks = "Similar Books";
 
   // Book Details Screen
-  static const String story = "Story";
+  static const String description = "Description";
   static const String author = "Author";
   // Buttons
   static const String buttonSeeAll = "see all";

@@ -10,16 +10,18 @@ class BookDetailsContent extends StatelessWidget {
     super.key,
     required this.title,
     required this.year,
-    required this.genre,
+    required this.catogray,
     required this.rating,
     required this.ratingCount,
+    required this.pageCount,
   });
 
   final String title;
   final String year;
-  final String genre;
+  final String catogray;
   final String rating;
   final String ratingCount;
+  final int pageCount;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,9 @@ class BookDetailsContent extends StatelessWidget {
                       children: [
                         Text(year, style: AppTextStyles.bodySmall),
                         CircleDot(),
-                        Text(genre, style: AppTextStyles.bodySmall),
+                        Text('${pageCount}', style: AppTextStyles.bodySmall),
+                        CircleDot(),
+                        Text(catogray, style: AppTextStyles.bodySmall),
                       ],
                     ),
                   ),

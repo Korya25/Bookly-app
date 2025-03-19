@@ -20,9 +20,10 @@ class BookDetailsCard extends StatelessWidget {
         BookDetailsContent(
           title: 'Zamalek',
           year: '1911',
-          genre: 'Sports',
+          catogray: 'Sports',
           rating: '5',
           ratingCount: '357',
+          pageCount: 295,
         ),
 
         // Navigation and bookmark controls
