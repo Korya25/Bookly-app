@@ -25,26 +25,44 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     return books;
   }
 
-  List<BookEntity> getBooksList(Map<String, dynamic> data) {
-    List<BookEntity> books = [];
-    for (var bookMap in data['items']) {
-      books.add(BookModel.fromJson(bookMap));
-    }
+  @override
+  Future<List<BookEntity>> getNewestBooks() async {
+    var data = await apiServices.get(
+      endPoint:
+          'volumes?q=programming&filter=paid-ebooks&maxResults=10&orderBy=newest',
+    );
+
+    List<BookEntity> books = getBooksList(data);
     return books;
   }
 
   @override
-  Future<List<BookEntity>> getNewestBooks() {
-    apiServices.get(endPoint: endPoint);
+  Future<List<BookEntity>> getPopularBooks() async {
+    var data = await apiServices.get(
+      endPoint:
+          'volumes?q=best+programming+books&filter=paid-ebooks&maxResults=10&orderBy=relevance',
+    );
+
+    List<BookEntity> books = getBooksList(data);
+    return books;
   }
 
   @override
-  Future<List<BookEntity>> getPopularBooks() {
-    apiServices.get(endPoint: endPoint);
-  }
+  Future<List<BookEntity>> getSimilarBooks() async {
+    var data = await apiServices.get(
+      endPoint:
+          'volumes?q=programming&filter=paid-ebooks&maxResults=10&orderBy=newest',
+    );
 
-  @override
-  Future<List<BookEntity>> getSimilarBooks() {
-    apiServices.get(endPoint: endPoint);
+    List<BookEntity> books = getBooksList(data);
+    return books;
   }
+}
+
+List<BookEntity> getBooksList(Map<String, dynamic> data) {
+  List<BookEntity> books = [];
+  for (var bookMap in data['items']) {
+    books.add(BookModel.fromJson(bookMap));
+  }
+  return books;
 }
