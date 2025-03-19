@@ -57,7 +57,7 @@ class BookDetailsContent extends StatelessWidget {
                       children: [
                         Text(year, style: AppTextStyles.bodySmall),
                         CircleDot(),
-                        Text('${pageCount}', style: AppTextStyles.bodySmall),
+                        Text('$pageCount', style: AppTextStyles.bodySmall),
                         CircleDot(),
                         Text(catogray, style: AppTextStyles.bodySmall),
                       ],
