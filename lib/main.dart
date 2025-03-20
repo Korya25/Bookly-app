@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  runApp(const MyApp());
   await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
 
@@ -14,6 +13,7 @@ void main() async {
   await Hive.openBox(AppConstants.kPopularBox);
   await Hive.openBox(AppConstants.kNewestBox);
   await Hive.openBox(AppConstants.kSimilarBox);
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
