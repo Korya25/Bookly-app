@@ -3,26 +3,27 @@ part 'book_entity.g.dart';
 
 @HiveType(typeId: 0)
 class BookEntity {
-  final String? bookId;
   @HiveField(0)
-  final String title;
+  final String? bookId;
   @HiveField(1)
-  final List<String> authors;
+  final String title;
   @HiveField(2)
-  final String? publishedDate;
+  final List<String> authors;
   @HiveField(3)
-  final String? description;
+  final String? publishedDate;
   @HiveField(4)
-  final num? pageCount;
+  final String? description;
   @HiveField(5)
-  final num? price;
+  final num? pageCount;
   @HiveField(6)
-  final num? averageRating;
+  final num? price;
   @HiveField(7)
-  final num? ratingsCount;
+  final num? averageRating;
   @HiveField(8)
-  final String? thumbnail;
+  final num? ratingsCount;
   @HiveField(9)
+  final String? thumbnail;
+  @HiveField(10)
   final List<String>? categories;
 
   BookEntity({

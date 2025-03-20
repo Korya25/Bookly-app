@@ -17,42 +17,45 @@ class BookEntityAdapter extends TypeAdapter<BookEntity> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return BookEntity(
-      title: fields[0] as String,
-      authors: (fields[1] as List).cast<String>(),
-      publishedDate: fields[2] as String?,
-      description: fields[3] as String?,
-      pageCount: fields[4] as num?,
-      price: fields[5] as num?,
-      averageRating: fields[6] as num?,
-      ratingsCount: fields[7] as num?,
-      thumbnail: fields[8] as String?,
-      categories: (fields[9] as List?)?.cast<String>(),
+      bookId: fields[0] as String?,
+      title: fields[1] as String,
+      authors: (fields[2] as List).cast<String>(),
+      publishedDate: fields[3] as String?,
+      description: fields[4] as String?,
+      pageCount: fields[5] as num?,
+      price: fields[6] as num?,
+      averageRating: fields[7] as num?,
+      ratingsCount: fields[8] as num?,
+      thumbnail: fields[9] as String?,
+      categories: (fields[10] as List?)?.cast<String>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, BookEntity obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(0)
-      ..write(obj.title)
+      ..write(obj.bookId)
       ..writeByte(1)
-      ..write(obj.authors)
+      ..write(obj.title)
       ..writeByte(2)
-      ..write(obj.publishedDate)
+      ..write(obj.authors)
       ..writeByte(3)
-      ..write(obj.description)
+      ..write(obj.publishedDate)
       ..writeByte(4)
-      ..write(obj.pageCount)
+      ..write(obj.description)
       ..writeByte(5)
-      ..write(obj.price)
+      ..write(obj.pageCount)
       ..writeByte(6)
-      ..write(obj.averageRating)
+      ..write(obj.price)
       ..writeByte(7)
-      ..write(obj.ratingsCount)
+      ..write(obj.averageRating)
       ..writeByte(8)
-      ..write(obj.thumbnail)
+      ..write(obj.ratingsCount)
       ..writeByte(9)
+      ..write(obj.thumbnail)
+      ..writeByte(10)
       ..write(obj.categories);
   }
 
