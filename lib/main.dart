@@ -2,6 +2,7 @@ import 'package:book_app/core/constant/app_constant.dart';
 import 'package:book_app/core/router/app_router.dart';
 import 'package:book_app/core/themes/app_theme.dart';
 import 'package:book_app/core/utils/functions/setup_services_locator.dart';
+import 'package:book_app/core/utils/functions/simple_bloc_observer.dart';
 import 'package:book_app/features/books/data/repo/home_repo_impl.dart';
 import 'package:book_app/features/books/domain/entities/book_entity.dart';
 import 'package:book_app/features/books/domain/use_case/fetch_featured_books_usecase.dart';
@@ -24,6 +25,7 @@ void main() async {
   await Hive.openBox(AppConstants.kPopularBox);
   await Hive.openBox(AppConstants.kNewestBox);
   await Hive.openBox(AppConstants.kSimilarBox);
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 
