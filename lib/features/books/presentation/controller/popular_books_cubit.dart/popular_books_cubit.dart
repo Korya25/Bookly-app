@@ -8,7 +8,7 @@ class PopularBooksCubit extends Cubit<PopularBooksState> {
 
   final FetchPopularBooksUseCase fetchPopularBooksUseCase;
 
-  Future<void> getFeaturedBooks() async {
+  Future<void> getPopularBooks() async {
     emit(PopularBooksLoading());
 
     var result = await fetchPopularBooksUseCase.call();

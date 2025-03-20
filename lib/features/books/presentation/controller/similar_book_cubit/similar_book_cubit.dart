@@ -8,7 +8,7 @@ class SimilarBookCubit extends Cubit<SimilarBookState> {
 
   final FetchSimilarBooksUseCase fetchSimilarBooksUseCase;
 
-  Future<void> getFeaturedBooks() async {
+  Future<void> getSimilarBooks() async {
     emit(SimilarBooksLoading());
 
     var result = await fetchSimilarBooksUseCase.call();

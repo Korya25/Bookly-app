@@ -7,7 +7,7 @@ class NewestBooksCubit extends Cubit<NewestBookState> {
 
   final FetchNewestBooksUseCase fetchNewestBooksUseCase;
 
-  Future<void> getFeaturedBooks() async {
+  Future<void> getNewestBooks() async {
     emit(NewestBooksLoading());
 
     var result = await fetchNewestBooksUseCase.call();
