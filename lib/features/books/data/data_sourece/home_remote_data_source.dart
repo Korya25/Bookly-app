@@ -1,5 +1,6 @@
 import 'package:book_app/core/api_services/api_services.dart';
 import 'package:book_app/core/constant/app_constant.dart';
+import 'package:book_app/core/utils/functions/save_books.dart';
 import 'package:book_app/features/books/data/models/book_model/book_model.dart';
 import 'package:book_app/features/books/domain/entities/book_entity.dart';
 
@@ -20,8 +21,11 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
       endPoint:
           'volumes?q=flutter&filter=paid-ebooks&maxResults=${AppConstants.carouselSliderItemsCount}',
     );
-
     List<BookEntity> books = getBooksList(data);
+
+    // add featured books to the hive box
+    saveBooksData(books, AppConstants.kFeaturedBox);
+
     return books;
   }
 
@@ -33,6 +37,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     );
 
     List<BookEntity> books = getBooksList(data);
+    // add Newest books to the hive box
+    saveBooksData(books, AppConstants.kNewestBox);
     return books;
   }
 
@@ -44,6 +50,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     );
 
     List<BookEntity> books = getBooksList(data);
+    // add Popular books to the hive box
+    saveBooksData(books, AppConstants.kPopularBox);
     return books;
   }
 
@@ -55,6 +63,8 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     );
 
     List<BookEntity> books = getBooksList(data);
+    // add Similar books to the hive box
+    saveBooksData(books, AppConstants.kSimilarBox);
     return books;
   }
 }

@@ -11,6 +11,9 @@ void main() async {
   Hive.registerAdapter(BookEntityAdapter());
 
   await Hive.openBox(AppConstants.kFeaturedBox);
+  await Hive.openBox(AppConstants.kPopularBox);
+  await Hive.openBox(AppConstants.kNewestBox);
+  await Hive.openBox(AppConstants.kSimilarBox);
 }
 
 class MyApp extends StatelessWidget {
